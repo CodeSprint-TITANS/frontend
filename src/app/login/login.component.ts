@@ -4,7 +4,7 @@ import { DialogService } from '../services/dialog.service';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css']
+  styleUrls: ['./login.component.css'],
 })
 export class LoginComponent implements OnInit {
 
@@ -17,8 +17,8 @@ export class LoginComponent implements OnInit {
       
   }
 
-  openDialog(){
-    console.log("open modal")
+  openDialog() {
+    console.log('open modal');
     this.dialogService.openDialogTemplate();
   }
 }

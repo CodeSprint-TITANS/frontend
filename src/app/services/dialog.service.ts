@@ -4,7 +4,7 @@ import { DialogTemplateComponent } from '../dialog/dialog-template/dialog-templa
 import { MatDialogRef } from '@angular/material/dialog';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class DialogService {
   constructor(private dialog: MatDialog) { }
