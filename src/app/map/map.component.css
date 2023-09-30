@@ -1,0 +1,29 @@
+#map {
+  width: 30vw;
+  height: 30vh;
+}
+
+.myBox {
+  float: left;
+  height: 2rem;
+  width: 2rem;
+  margin-bottom: 15px;
+  clear: both;
+  margin-right: 1.2rem;
+}
+
+.red {
+  background-color: #f03;
+}
+
+.green {
+  background-color: #008000;
+}
+
+.yellow {
+  background-color: #ffff00;
+}
+
+.orange {
+  background-color: #ffa500;
+}

@@ -4,10 +4,12 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 // External Modules (UI)
 import { ToastrModule } from 'ngx-toastr';
-import { MatTabsModule } from '@angular/material/tabs'; 
+import { MatTabsModule } from '@angular/material/tabs';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
-import {MatButtonModule} from '@angular/material/button';
-import {MatDialogModule} from '@angular/material/dialog';
+import { MatButtonModule } from '@angular/material/button';
+import { MatDialogModule } from '@angular/material/dialog';
+import { LeafletModule } from '@asymmetrik/ngx-leaflet';
+import { MatSliderModule } from '@angular/material/slider';
 
 // Internal Modules
 import { AppRoutingModule } from './app-routing.module';
@@ -22,6 +24,7 @@ import { LoginComponent } from './login/login.component';
 import { FooterComponent } from './footer/footer.component';
 import { DialogTemplateComponent } from './dialog/dialog-template/dialog-template.component';
 import { MapComponent } from './map/map.component';
+import { SliderComponent } from './slider/slider.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +35,8 @@ import { MapComponent } from './map/map.component';
     LoginComponent,
     FooterComponent,
     DialogTemplateComponent,
-    MapComponent
+    MapComponent,
+    SliderComponent,
   ],
   imports: [
     // External Modules
@@ -47,8 +51,10 @@ import { MapComponent } from './map/map.component';
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
+    LeafletModule,
+    MatSliderModule,
   ],
   providers: [UserService],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

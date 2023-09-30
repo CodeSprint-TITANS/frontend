@@ -1,1 +1,29 @@
-<div id="map"></div>
+<div class="container flex" style="height: 50vh;">
+    <div class="row w-100 p-2">
+        {{date}}
+    </div>
+    <div class="row w-100 h-100">
+        <div class="col-9">
+            <div id="map" class="w-100 h-100"></div>
+        </div>
+        <div class="col-3 h-50 d-flex flex-column">
+            <div class="p-2">Congestion Legend:</div>
+            <div>
+                <div class='myBox red'></div>High
+            </div>
+            <br>
+            <div>
+                <div class='myBox orange'></div> Med
+            </div>
+            <br>
+            <div>
+                <div class='myBox yellow'></div>Low
+            </div>
+            <br>
+            <div>
+                <div class='myBox green'></div>No
+            </div>
+        </div>
+    </div>
+    <div class="row p-2"><app-slider (newTime)="onChange($event)"></app-slider></div>
+</div>
