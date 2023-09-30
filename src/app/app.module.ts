@@ -38,7 +38,7 @@ import { ChartComponent } from './chart/chart.component';
     FooterComponent,
     DialogTemplateComponent,
     GanttComponent,
-    ChartComponent
+    ChartComponent,
   ],
   imports: [
     // External Modules

@@ -20,4 +20,36 @@
     z-index: 9999; /* Ensure the loader is above other elements */
   }
 
+
+  button{
+    cursor: pointer;
+    border: 2px solid grey;
+    background: #666;
+    color: white; 
+    font-weight: bold;
+    border-radius: 4px;
+  }
+  .modal-title{
+    text-align: center;
+    font-size: 16px;
+    width: 100%;
+    background-color: lightgrey;
+    padding: 24px 0px;
+    font-weight: bold;
+}
+
+
+  .modal-body{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 200px;
+  }
   
+
+  .modal-footer{
+    padding: 16px;
+    display:flex;
+    justify-content: space-between;
+  }

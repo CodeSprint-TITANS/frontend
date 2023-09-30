@@ -1,0 +1,12 @@
+/* .alternate-row:nth-child(odd){
+    background-color: #f3f3f3;
+}
+*/
+
+thead> tr> td{
+    background-color: #cff4fc; 
+} 
+
+td{
+    border: 1px solid #ddd;
+}

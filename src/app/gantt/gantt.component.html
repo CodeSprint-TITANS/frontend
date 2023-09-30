@@ -42,9 +42,9 @@
                             <span>Type: {{item.type}}</span>
                         </div>
                         <div class="item-content">
-                            <label class="label">Time <i (click)="expandItem(i)" style="float: right;"
+                            <label class="label">Date Time <i (click)="expandItem(i)" style="float: right;"
                                     [ngClass]="item.expand?'fas fa-chevron-up': 'fas fa-chevron-down'"></i></label>
-                            <span>{{item.starttime}}</span>
+                            <span>{{item.starttime}} &nbsp; <i class="fa-solid fa-circle-exclamation" (click)="showMessage(item)" [hidden]="!item.recommended"></i></span>
                             <span>{{item.endtime}}</span>
                         </div>
                         <div class="item-content" [hidden]="!item.expand">
@@ -53,8 +53,9 @@
                             <span>Driver: {{item.driver}}</span>
                         </div>
                         <div class="item-content" [hidden]="!item.expand">
-                            <label class="label">Status</label>
-                            <span>State: {{item.status}}</span>
+                            <label class="label">Location</label>
+                            <span>From: {{item.from}}</span>
+                            <span>To: {{item.to}}</span>
                             <span></span>
                         </div>
                     </div>
@@ -63,8 +64,8 @@
         </div>
     </div>
     <div class="gantt-container" style="flex: 3;">
-        <!-- <div class="gantt"></div>
+        <!-- <div class="gantt" [data]='pendingList'></div>
          -->
-         <app-chart></app-chart>
+         <app-chart [data]='pendingList'></app-chart>
     </div>
 </div>
