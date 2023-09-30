@@ -1,0 +1,4 @@
+<nav mat-tab-nav-bar [tabPanel]="tabPanel">
+    <a mat-tab-link *ngFor="let link of links" (click)="switchTab(link)" [active]="activeLink == link"> {{link.title}} </a>
+</nav>
+<mat-tab-nav-panel #tabPanel></mat-tab-nav-panel>
