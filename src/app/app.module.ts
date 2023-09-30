@@ -21,6 +21,7 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { LoginComponent } from './login/login.component';
 import { FooterComponent } from './footer/footer.component';
 import { DialogTemplateComponent } from './dialog/dialog-template/dialog-template.component';
+import { MapComponent } from './map/map.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { DialogTemplateComponent } from './dialog/dialog-template/dialog-templat
     NavbarComponent,
     LoginComponent,
     FooterComponent,
-    DialogTemplateComponent
+    DialogTemplateComponent,
+    MapComponent
   ],
   imports: [
     // External Modules
