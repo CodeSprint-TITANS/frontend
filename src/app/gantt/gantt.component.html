@@ -1,0 +1,71 @@
+<div style="display:inline-flex; width: 100%;">
+    <div style="flex: 1;">
+        <div style="padding: 0px 8px;">
+            <label class="label">Search</label>
+            <input style="margin-left: 8px; height: 20px;" (keyup)="search($event)">
+            <label class="label">{{filterList.length}} Selected Movements </label>
+        </div>
+        <!-- <div *ngFor="let item of pendingList; let i = index">
+            <div class="item-card">
+                <div style="flex-direction: row; justify-content: space-between; width: 100%;">
+                <div class="item-content">
+                <label class="label">Vehicle Info</label>
+                    <span>Number: {{item.vehicle}}</span>
+                    <span>Driver: {{item.driver}}</span>
+                </div>
+                <div class="item-content">
+                    <label class="label">Status</label>
+                        <span>State: {{item.status}}</span>
+                        <span></span>
+                    </div>
+                <div class="item-content">
+                <label class="label">Container Info</label>
+                    <span>Number: {{item.container}}</span>
+                    <span>Type: {{item.type}}</span>
+                </div>
+                <div class="item-content">
+                    <label class="label">Time</label>
+                        <span>{{this.convertDate(item.starttime)}}</span>
+                        <span>{{this.convertDate(item.endtime)}}</span>
+                    </div>
+            </div>
+            </div>
+        </div> -->
+        <div cdkDropList [cdkDropListData]="filterList" class="list" (cdkDropListDropped)="onDrop($event)">
+            <div *ngFor="let item of filterList; let i = index;" cdkDrag>
+                <div class="item-card">
+                    <div style="flex-direction: row; justify-content: space-between; width: 100%;">
+
+                        <div class="item-content">
+                            <label class="label">Container Info</label>
+                            <span>Number: {{item.container}}</span>
+                            <span>Type: {{item.type}}</span>
+                        </div>
+                        <div class="item-content">
+                            <label class="label">Date Time <i (click)="expandItem(i)" style="float: right;"
+                                    [ngClass]="item.expand?'fas fa-chevron-up': 'fas fa-chevron-down'"></i></label>
+                            <span>{{item.starttime}} &nbsp; <i class="fa-solid fa-circle-exclamation" (click)="showMessage(item)" [hidden]="!item.recommended"></i></span>
+                            <span>{{item.endtime}}</span>
+                        </div>
+                        <div class="item-content" [hidden]="!item.expand">
+                            <label class="label">Vehicle Info</label>
+                            <span>Number: {{item.vehicle}}</span>
+                            <span>Driver: {{item.driver}}</span>
+                        </div>
+                        <div class="item-content" [hidden]="!item.expand">
+                            <label class="label">Location</label>
+                            <span>From: {{item.from}}</span>
+                            <span>To: {{item.to}}</span>
+                            <span></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="gantt-container" style="flex: 3;">
+        <!-- <div class="gantt" [data]='pendingList'></div>
+         -->
+         <app-chart [data]='pendingList'></app-chart>
+    </div>
+</div>

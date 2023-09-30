@@ -17,8 +17,8 @@ export class LoginComponent implements OnInit {
       
   }
 
-  openDialog() {
-    console.log('open modal');
-    this.dialogService.openDialogTemplate();
-  }
+  // openDialog(){
+  //   console.log("open modal")
+  //   this.dialogService.openDialogTemplate();
+  // }
 }
