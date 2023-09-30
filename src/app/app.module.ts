@@ -6,8 +6,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
 import { MatTabsModule } from '@angular/material/tabs'; 
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
-import {MatButtonModule} from '@angular/material/button';
-import {MatDialogModule} from '@angular/material/dialog';
+import { MatButtonModule } from '@angular/material/button';
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatCardModule } from '@angular/material/card';
 
 // Internal Modules
 import { AppRoutingModule } from './app-routing.module';
@@ -21,6 +22,7 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { LoginComponent } from './login/login.component';
 import { FooterComponent } from './footer/footer.component';
 import { DialogTemplateComponent } from './dialog/dialog-template/dialog-template.component';
+import { CardComponent } from './card/card.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +32,8 @@ import { DialogTemplateComponent } from './dialog/dialog-template/dialog-templat
     NavbarComponent,
     LoginComponent,
     FooterComponent,
-    DialogTemplateComponent
+    DialogTemplateComponent,
+    CardComponent,
   ],
   imports: [
     // External Modules
@@ -40,6 +43,7 @@ import { DialogTemplateComponent } from './dialog/dialog-template/dialog-templat
     MatProgressSpinnerModule,
     MatButtonModule,
     MatDialogModule,
+    MatCardModule,
     // Internal Modules
     BrowserModule,
     AppRoutingModule,
@@ -47,6 +51,6 @@ import { DialogTemplateComponent } from './dialog/dialog-template/dialog-templat
     FormsModule,
   ],
   providers: [UserService],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
 export class AppModule { }

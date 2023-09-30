@@ -9,6 +9,7 @@ import { User } from '../User';
 })
 export class RegistrationComponent {
   user: User = new User('', '');
+
   message: any;
 
   constructor(private service: UserService) {}
@@ -16,7 +17,7 @@ export class RegistrationComponent {
   ngOnInit() {}
 
   public registerNow() {
-    let resp = this.service.register(this.user);
+    const resp = this.service.register(this.user);
     resp.subscribe((data) => (
       this.message = data.toString));
   }
