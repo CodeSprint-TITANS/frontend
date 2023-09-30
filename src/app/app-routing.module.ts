@@ -6,16 +6,14 @@ import { LoginComponent } from './login/login.component';
 import { TimetableComponent } from './timetable/timetable.component';
 
 const routes: Routes = [
-  {
-    path: "", component: LoginComponent, pathMatch: "full"},
-      { path: "login", component: LoginComponent },
-      { path: "register", component: RegistrationComponent },
-      { path: "timetable", component: TimetableComponent },
-      { path: "search-user", component: SearchUserComponent }
+  { path: '', component: LoginComponent, pathMatch: 'full' },
+  { path: 'home', component: LoginComponent },
+  { path: 'register', component: RegistrationComponent },
+  { path: 'search-user', component: SearchUserComponent },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
 export class AppRoutingModule { }

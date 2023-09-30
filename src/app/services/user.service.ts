@@ -4,7 +4,7 @@ import { Environment } from 'src/environment';
 import { User } from '../User';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class UserService {
 
@@ -12,7 +12,7 @@ export class UserService {
 
   }
 
-  public register(user: User){
-    return this.http.post(Environment.apiUrl+"/user/register", user);
+  public register(user: User) {
+    return this.http.post(Environment.apiUrl + '/user/register', user);
   }
 }

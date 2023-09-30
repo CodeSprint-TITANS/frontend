@@ -1,128 +1,75 @@
-<div class="container">
-  <p>Date: 30/9/2023</p>
-  <table class="table">
-    <thead>
-      <tr class="table-info" style="font-size: 16px;">
-        <th scope="col">Location \ Time</th>
-        <!-- <th scope="col">7 - 8am</th>
-          <th scope="col">8 - 9am</th>
-          <th scope="col">9 - 10am</th>
-          <th scope="col">10 - 11am</th>
-          <th scope="col">11 - 12pm</th>
-          <th scope="col">12 - 1pm</th>
-          <th scope="col">1 - 2pm</th    >
-          <th scope="col">2 - 3pm</th>
-          <th scope="col">3 - 4pm</th>
-          <th scope="col">4 - 5pm</th>
-          <th scope="col">5 - 6pm</th>
-          <th scope="col">6 - 7pm</th>
-         -->
-
-        <th scope="col">8am</th>
-        <th scope="col">9am</th>
-        <th scope="col">10am</th>
-        <th scope="col">11am</th>
-        <th scope="col">12pm</th>
-        <th scope="col">1pm</th>
-        <th scope="col">2pm</th>
-        <th scope="col">3pm</th>
-        <th scope="col">4pm</th>
-        <th scope="col">5pm</th>
-        <th scope="col">6pm</th>
-        <th scope="col">7pm</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <th scope="row">TP Terminal -> JE Warehouse</th>
-        <td>3</td>
-        <td class="severe CellWithComment">3<span class="CellComment">Forecasted an extra 30 mins due to high traffic intensity.</span></td>
-        <td>4</td>
-        <td class="severe CellWithComment">8<span class="CellComment">Forecasted an extra 40 mins due to low visibility.</span></td>
-        <td>5</td>
-        <td>9</td>
-        <td>1</td>
-        <td>2</td>
-        <td>9</td>
-        <td>2</td>
-        <td class="severe CellWithComment">6<span class="CellComment">Forecasted an extra 50 mins due to high traffic intensity and heavy downpour.</span></td>
-        <td class="severe CellWithComment" >6<span class="CellComment">Forecasted an extra 25 mins due to high traffic intensity.</span></td>
-      </tr>
-      <tr>
-        <th scope="row">TP Terminal -> AMK Warehouse</th>
-        <td class="severe CellWithComment">2<span class="CellComment">Forecasted an extra 30 mins.</span></td>
-        <td>8</td>
-        <td>6</td>
-        <td>7</td>
-        <td class="severe CellWithComment">8<span class="CellComment">Forecasted an extra 50 mins due to high traffic intensity and thunderstorm.</span></td>
-        <td>9</td>
-        <td>6</td>
-        <td>1</td>
-        <td>2</td>
-        <td>1</td>
-        <td>8</td>
-        <td class="severe CellWithComment">9<span class="CellComment">Forecasted an extra 60 mins.</span></td>
-      </tr>
-      <tr>
-        <th scope="row">Tuas Terminal -> JE Warehouse</th>
-        <td>8</td>
-        <td class="severe CellWithComment">8<span class="CellComment">Forecasted an extra 45 mins and low visibility.</span></td>
-        <td>9</td>
-        <td>7</td>
-        <td>8</td>
-        <td class="severe CellWithComment">6<span class="CellComment">Forecasted an extra 50 mins and heavy downpour.</span></td>
-        <td>5</td>
-        <td>5</td>
-        <td class="severe CellWithComment">8<span class="CellComment">Forecasted an extra 10 mins.</span></td>
-        <td>7</td>
-        <td>1</td>
-        <td class="severe CellWithComment">5<span class="CellComment">Forecasted an extra 35 mins.</span></td>
-      </tr>
-      <tr>
-        <th scope="row">JE Warehouse -> Tuas Terminal</th>
-        <td>8</td>
-        <td class="severe CellWithComment">0<span class="CellComment">Forecasted an extra 45 mins.</span></td>
-        <td>2</td>
-        <td>4</td>
-        <td>0</td>
-        <td class="severe CellWithComment">8<span class="CellComment">Forecasted an extra 50 mins and heavy downpour.</span></td>
-        <td>3</td>
-        <td>1</td>
-        <td>9</td>
-        <td>9</td>
-        <td class="severe CellWithComment">2<span class="CellComment">Forecasted an extra 60 mins and heavy downpour.</span></td>
-        <td class="severe CellWithComment">1<span class="CellComment">Forecasted an extra 60 mins and heavy downpour.</span></td>
-      </tr>
-      <tr>
-        <th scope="row">JE Warehouse -> Depot 1</th>
-        <td class="severe CellWithComment">5<span class="CellComment">Forecasted an extra 20 mins.</span></td>
-        <td>1</td>
-        <td>9</td>
-        <td>1</td>
-        <td>2</td>
-        <td class="severe CellWithComment">8<span class="CellComment">Forecasted an extra 20 mins.</span></td>
-        <td>6</td>
-        <td>0</td>
-        <td class="severe CellWithComment">2<span class="CellComment">Forecasted an extra 50 mins.</span></td>
-        <td>8</td>
-        <td class="severe CellWithComment">9<span class="CellComment">Forecasted an extra 70 mins.</span></td>
-        <td class="severe CellWithComment">4<span class="CellComment">Forecasted an extra 70 mins.</span></td>
-      </tr>
-      <tr>
-        <th scope="row">JE Warehouse -> Depot 2</th>
-        <td>8</td>
-        <td class="severe CellWithComment">1<span class="CellComment">Very high congestion</span></td>
-        <td>2</td>
-        <td>4</td>
-        <td>5</td>
-        <td class="severe CellWithComment">0<span class="CellComment">Very high congestion</span></td>
-        <td>3</td>
-        <td>8</td>
-        <td>4</td>
-        <td>4</td>
-        <td class="severe CellWithComment">3<span class="CellComment">Very high congestion</span></td>
-        <td class="severe CellWithComment">6<span class="CellComment">Very high congestion</span></td>
-      </tr>
-    </tbody>
-  </table>
+<div>
+  <mat-form-field>
+    <mat-label>Choose a date</mat-label>
+    <input matInput [matDatepicker]="picker" (dateChange)="valueChange($event)" [formControl]="dateSelected">
+    <!-- <mat-hint>MM/DD/YYYY</mat-hint> -->
+    <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-datepicker #picker></mat-datepicker>
+  </mat-form-field>
+  <p>Date: {{dateSelected.value | date: 'MM/dd/yyyy' }}</p>
+    <div *ngIf="dateFlag; else elseBlock">
+        <div class="flex">
+            <app-card [titleData]="'Total Trips'" [numberData]="80"></app-card>
+            <!-- <app-card [titleData]="'Total Drivers'" [numberData]={}></app-card> -->
+        </div>
+        <table class="table">
+            <thead>
+              <tr class="table-info" style="font-size: 16px;">
+                <th scope="col">Location \ Time</th>
+                <!-- <th scope="col">7 - 8am</th>
+                  <th scope="col">8 - 9am</th>
+                  <th scope="col">9 - 10am</th>
+                  <th scope="col">10 - 11am</th>
+                  <th scope="col">11 - 12pm</th>
+                  <th scope="col">12 - 1pm</th>
+                  <th scope="col">1 - 2pm</th    >
+                  <th scope="col">2 - 3pm</th>
+                  <th scope="col">3 - 4pm</th>
+                  <th scope="col">4 - 5pm</th>
+                  <th scope="col">5 - 6pm</th>
+                  <th scope="col">6 - 7pm</th>
+                 -->
+        
+                <th scope="col">7am</th>
+                <th scope="col">8am</th>
+                <th scope="col">9am</th>
+                <th scope="col">10am</th>
+                <th scope="col">11am</th>
+                <th scope="col">12pm</th>
+                <th scope="col">1pm</th>
+                <th scope="col">2pm</th>
+                <th scope="col">3pm</th>
+                <th scope="col">4pm</th>
+                <th scope="col">5pm</th>
+                <th scope="col">6pm</th>
+              </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let record of filteredList">
+                    <td>{{ record.location  }} <br>{{record.timeTaken}}</td>
+                    <td *ngFor="let job of record.jobDetailList" [class.severe]="job.congestionFlag" [class.CellWithComment]="job.congestionFlag" >
+                        <div class="row">
+                            <div class="col">
+                                {{job.trips}}
+                            </div>
+                            <div class="col">
+                                <div *ngIf="job.weatherFlag"> 
+                                    <i class="fa-solid fa-cloud-bolt fa-sm"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <br>
+                        {{job.estimatedTime}}
+                        <span class="CellComment">
+                            {{job.congestionTiming}}
+                        </span>
+                    </td>
+                </tr>
+            </tbody>
+          </table>
+    </div>
+    <ng-template #elseBlock>
+        <p>Schedule is not generated yet.</p>
+    </ng-template>
+  
 </div>
