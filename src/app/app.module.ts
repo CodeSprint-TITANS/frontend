@@ -7,11 +7,12 @@ import { CommonModule, DatePipe } from '@angular/common';
 import { ToastrModule } from 'ngx-toastr';
 import { MatTabsModule } from '@angular/material/tabs'; 
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
-import {MatButtonModule} from '@angular/material/button';
-import {MatDialogModule} from '@angular/material/dialog';
 import { DragDropModule } from '@angular/cdk/drag-drop';
 import {MatFormFieldModule} from '@angular/material/form-field'; 
 import {MatInputModule} from '@angular/material/input';
+import { MatButtonModule } from '@angular/material/button';
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatCardModule } from '@angular/material/card';
 
 // Internal Modules
 import { AppRoutingModule } from './app-routing.module';
@@ -27,6 +28,7 @@ import { FooterComponent } from './footer/footer.component';
 import { DialogTemplateComponent } from './dialog/dialog-template/dialog-template.component';
 import { GanttComponent } from './gantt/gantt.component';
 import { ChartComponent } from './chart/chart.component';
+import { CardComponent } from './card/card.component';
 
 @NgModule({
   declarations: [
@@ -39,6 +41,7 @@ import { ChartComponent } from './chart/chart.component';
     DialogTemplateComponent,
     GanttComponent,
     ChartComponent,
+    CardComponent,
   ],
   imports: [
     // External Modules
@@ -51,6 +54,7 @@ import { ChartComponent } from './chart/chart.component';
     DragDropModule,
     MatFormFieldModule,
     MatInputModule,
+    MatCardModule,
     // Internal Modules
     BrowserModule,
     AppRoutingModule,
