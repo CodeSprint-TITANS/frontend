@@ -9,17 +9,16 @@ class navClass {
 @Component({
   selector: 'app-navbar',
   templateUrl: './navbar.component.html',
-  styleUrls: ['./navbar.component.css'],
+  styleUrls: ['./navbar.component.css']
 })
 
 export class NavbarComponent {
 
   links:navClass[] = [];
-
   activeLink: navClass = new navClass('', '');
   
   constructor(private router: Router) { 
-    this.links = [{ title: 'Home', path: '/home' }, { title: 'Map', path: '/register' }, { title: 'Job Schedule', path: 'search-user' }];
+    this.links = [{ title: 'Home', path: '/home' }, { title: 'Map', path: '/register' }, { title: 'Job Schedule', path: 'gantt' }];
     this.activeLink = this.links[0];
   }
 

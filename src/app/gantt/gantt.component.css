@@ -1,0 +1,27 @@
+.label {
+  /* text-decoration: underline;
+     */
+  font-weight: bold;
+  font-size: 12px;
+}
+
+.item-card {
+  border-radius: 4px;
+  margin: 8px;
+  gap: 8px;
+  font-size: 12px;
+  background-color: #777;
+  color: white;
+}
+
+.list {
+  list-style: none;
+}
+
+.list div {
+  cursor: grab;
+}
+
+.item-content{
+    display: inline-flex; flex-direction: column; width: 50%; padding: 4px;
+}

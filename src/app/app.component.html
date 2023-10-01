@@ -1,8 +1,5 @@
 <app-navbar></app-navbar>
-<div class="content">
-  <router-outlet></router-outlet>
-</div>
-<app-footer></app-footer>
+<router-outlet></router-outlet>
 <div *ngIf="isLoading" class="loader-overlay">
     <mat-progress-spinner mode="indeterminate"></mat-progress-spinner>
   </div>

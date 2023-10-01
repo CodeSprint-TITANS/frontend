@@ -1,11 +1,13 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { CommonModule, DatePipe } from '@angular/common';
 
 // External Modules (UI)
 import { ToastrModule } from 'ngx-toastr';
 import { MatTabsModule } from '@angular/material/tabs'; 
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { DragDropModule } from '@angular/cdk/drag-drop';
 import { MatButtonModule } from '@angular/material/button';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatCardModule } from '@angular/material/card';
@@ -22,6 +24,8 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { LoginComponent } from './login/login.component';
 import { FooterComponent } from './footer/footer.component';
 import { DialogTemplateComponent } from './dialog/dialog-template/dialog-template.component';
+import { GanttComponent } from './gantt/gantt.component';
+import { ChartComponent } from './chart/chart.component';
 import { CardComponent } from './card/card.component';
 import { TimetableComponent } from './timetable/timetable.component';
 import {MatDatepickerModule} from '@angular/material/datepicker';
@@ -38,6 +42,8 @@ import {MatNativeDateModule} from '@angular/material/core';
     LoginComponent,
     FooterComponent,
     DialogTemplateComponent,
+    GanttComponent,
+    ChartComponent,
     CardComponent,
     TimetableComponent
   ],
@@ -49,6 +55,9 @@ import {MatNativeDateModule} from '@angular/material/core';
     MatProgressSpinnerModule,
     MatButtonModule,
     MatDialogModule,
+    DragDropModule,
+    MatFormFieldModule,
+    MatInputModule,
     MatCardModule,
     // Internal Modules
     ReactiveFormsModule,
@@ -56,9 +65,10 @@ import {MatNativeDateModule} from '@angular/material/core';
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    MatFormFieldModule, MatInputModule, MatDatepickerModule, MatNativeDateModule
+    MatFormFieldModule, MatInputModule, MatDatepickerModule, MatNativeDateModule,
+    CommonModule,
   ],
-  providers: [UserService],
-  bootstrap: [AppComponent],
+  providers: [UserService, DatePipe],
+  bootstrap: [AppComponent]
 })
 export class AppModule { }
