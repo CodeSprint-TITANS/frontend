@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 
 // Typescript Class Objects
-class navClass {
+class NavClass {
   constructor(public path: string, public title: string) { }
 }
 
@@ -14,9 +14,9 @@ class navClass {
 
 export class NavbarComponent {
 
-  links:navClass[] = [];
+  links:NavClass[] = [];
 
-  activeLink: navClass = new navClass('', '');
+  activeLink: NavClass = new NavClass('', '');
   
   constructor(private router: Router) { 
     this.links = [{ title: 'Home', path: '/home' }, { title: 'Map', path: '/register' }, { title: 'Job Schedule', path: 'gantt' }];
@@ -24,7 +24,7 @@ export class NavbarComponent {
   }
 
 
-  switchTab(link: navClass) {
+  switchTab(link: NavClass) {
     this.activeLink = link;
     this.router.navigateByUrl(link.path);
   }

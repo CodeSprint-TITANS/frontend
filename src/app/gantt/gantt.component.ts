@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { DatePipe } from '@angular/common';
-import { CdkDragDrop, moveItemInArray } from '@angular/cdk/drag-drop';
+import { moveItemInArray } from '@angular/cdk/drag-drop';
 import { DialogService } from '../services/dialog.service';
 @Component({
   selector: 'app-gantt',

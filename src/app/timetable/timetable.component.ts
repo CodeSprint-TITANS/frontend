@@ -1,8 +1,7 @@
-import { Component, OnInit, OnChanges, SimpleChanges, DoCheck } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { JobSchedule } from '../JobSchedule';
 import { JobDetail } from '../JobDetail';
 import { FormControl } from '@angular/forms';
-import { MatDatepickerInputEvent } from '@angular/material/datepicker';
 
 @Component({
   selector: 'app-timetable',
@@ -16,7 +15,7 @@ export class TimetableComponent implements OnInit {
 
   dateFlag: boolean = false;
 
-  filteredList: any;
+  filteredList: JobSchedule[] = [];
 
   scheduleList: JobSchedule[] = [
     new JobSchedule(
@@ -537,10 +536,7 @@ export class TimetableComponent implements OnInit {
 
   ];
 
-  constructor() {
-  }
-
-  valueChange(event: MatDatepickerInputEvent<Date>): void {
+  valueChange(): void {
     console.log('test');
     console.log(this.dateSelected.value);
     this.filteredList = this.scheduleList.filter((item: any) => (item.recordDate.getDate() == this.dateSelected.value.getDate() && item.recordDate.getMonth() == this.dateSelected.value.getMonth() && item.recordDate.getFullYear() == this.dateSelected.value.getFullYear()));
