@@ -56,7 +56,7 @@ button {
   justify-content: space-between;
 }
 
-.mdc-slider .mdc-slider__value-indicator {
+/* .mdc-slider .mdc-slider__value-indicator {
   transform: none !important;
   opacity: 1 !important;
-}
+} */

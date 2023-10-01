@@ -45,12 +45,7 @@ export class ChartComponent implements AfterViewInit {
           const createTd = document.createElement('td');
           createTd.style.width = '100px';
           createTd.setAttribute('data-item', `${i}`);
-          // Create a new td element
-          //   if (this.timingList[i][x]) {
-          // console.log(i,x)
-          //     createTd.style.backgroundColor = "pink";
-          //     this.renderer.appendChild(elementWithDataboxAttribute, createTd);
-          //   }
+
         }
       }
     }
@@ -125,10 +120,12 @@ export class ChartComponent implements AfterViewInit {
         ) * 48
       }px`;
       div.innerHTML = item.container;
-      div.addEventListener('click', (item) => {
+      if(item.recommended){
+      div.addEventListener('click', () => {
         // Function to be executed when the div is clicked
         this.dialogService.openDialogTemplate(item); // Call your specific function here with the 'item' parameter
-      });
+      }, item);
+    }
       setData?.appendChild(div);
     });
   }

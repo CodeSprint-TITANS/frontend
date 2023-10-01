@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { JobSchedule } from '../JobSchedule';
 import { JobDetail } from '../JobDetail';
 import { FormControl } from '@angular/forms';
+import { DialogService } from '../services/dialog.service';
 
 @Component({
   selector: 'app-timetable',
@@ -15,11 +16,13 @@ export class TimetableComponent implements OnInit {
 
   dateFlag: boolean = false;
 
+  constructor(private dialogService: DialogService) { }
+
   filteredList: JobSchedule[] = [];
 
   scheduleList: JobSchedule[] = [
     new JobSchedule(
-      'TP Terminal -> JE Warehouse',
+      'TP Terminal >> JE Warehouse',
       '30 mins',
       new Date(2023, 9, 1),
       [
@@ -62,7 +65,7 @@ export class TimetableComponent implements OnInit {
       ],
     ),
     new JobSchedule(
-      'TP Terminal -> AMK Warehouse',
+      'TP Terminal >> AMK Warehouse',
       '40 mins',
       new Date(2023, 9, 1),
       [
@@ -99,7 +102,7 @@ export class TimetableComponent implements OnInit {
       ],
     ),
     new JobSchedule(
-      'Tuas Terminal -> JE Warehouse',
+      'Tuas Terminal >> JE Warehouse',
       '25 mins',
       new Date(2023, 9, 1),
       [
@@ -142,7 +145,7 @@ export class TimetableComponent implements OnInit {
       ],
     ),
     new JobSchedule(
-      'JE Warehouse -> Tuas Terminal',
+      'JE Warehouse >> Tuas Terminal',
       '25 mins',
       new Date(2023, 9, 1),
       [
@@ -185,7 +188,7 @@ export class TimetableComponent implements OnInit {
       ],
     ),
     new JobSchedule(
-      'JE Warehouse -> Depot 1',
+      'JE Warehouse >> Depot 1',
       '55 mins',
       new Date(2023, 9, 1),
       [
@@ -234,7 +237,7 @@ export class TimetableComponent implements OnInit {
       ],
     ),
     new JobSchedule(
-      'JE Warehouse -> Depot 2',
+      'JE Warehouse >> Depot 2',
       '35 mins',
       new Date(2023, 9, 1),
       [
@@ -277,7 +280,7 @@ export class TimetableComponent implements OnInit {
       ],
     ),
     new JobSchedule(
-      'Tuas Terminal -> JE Warehouse',
+      'Tuas Terminal >> JE Warehouse',
       '25 mins',
       new Date(2023, 9, 2),
       [
@@ -319,7 +322,7 @@ export class TimetableComponent implements OnInit {
         ),
       ],
     ), new JobSchedule(
-      'TP Terminal -> JE Warehouse',
+      'TP Terminal >> JE Warehouse',
       '30 mins',
       new Date(2023, 9, 2),
       [
@@ -362,7 +365,7 @@ export class TimetableComponent implements OnInit {
       ],
     ),
     new JobSchedule(
-      'TP Terminal -> AMK Warehouse',
+      'TP Terminal >> AMK Warehouse',
       '40 mins',
       new Date(2023, 9, 2),
       [
@@ -399,7 +402,7 @@ export class TimetableComponent implements OnInit {
       ],
     ),
     new JobSchedule(
-      'JE Warehouse -> Tuas Terminal',
+      'JE Warehouse >> Tuas Terminal',
       '25 mins',
       new Date(2023, 9, 2),
       [
@@ -442,7 +445,7 @@ export class TimetableComponent implements OnInit {
       ],
     ),
     new JobSchedule(
-      'JE Warehouse -> Depot 1',
+      'JE Warehouse >> Depot 1',
       '55 mins',
       new Date(2023, 9, 2),
       [
@@ -491,7 +494,7 @@ export class TimetableComponent implements OnInit {
       ],
     ),
     new JobSchedule(
-      'JE Warehouse -> Depot 2',
+      'JE Warehouse >> Depot 2',
       '35 mins',
       new Date(2023, 9, 2),
       [
@@ -536,12 +539,13 @@ export class TimetableComponent implements OnInit {
 
   ];
 
+  explainModal(): void{
+    this.dialogService.openDialogExplain();
+  }
+
   valueChange(): void {
-    console.log('test');
-    console.log(this.dateSelected.value);
     this.filteredList = this.scheduleList.filter((item: any) => (item.recordDate.getDate() == this.dateSelected.value.getDate() && item.recordDate.getMonth() == this.dateSelected.value.getMonth() && item.recordDate.getFullYear() == this.dateSelected.value.getFullYear()));
     
-    console.log(this.filteredList);
     if (this.filteredList.length != 0) {
       this.dateFlag = true;
     } else {
@@ -551,7 +555,6 @@ export class TimetableComponent implements OnInit {
 
   ngOnInit(): void {
     this.filteredList = this.scheduleList.filter((item: any) => (item.recordDate.getDate() == this.dateSelected.value.getDate() && item.recordDate.getMonth() == this.dateSelected.value.getMonth() && item.recordDate.getFullYear() == this.dateSelected.value.getFullYear()));
-    console.log(this.filteredList);
     if (this.filteredList.length != 0) {
       this.dateFlag = true;
     } else {
@@ -559,16 +562,5 @@ export class TimetableComponent implements OnInit {
     }
   }
 
-  // ngDoCheck(): void {
-  //   console.log("check")
-  //   for (const record in this.scheduleList){
-  //     if (this.scheduleList[record].recordDate.getDate() == this.dateSelected.getDate() && 
-  //       this.scheduleList[record].recordDate.getMonth() == this.dateSelected.getMonth() &&
-  //       this.scheduleList[record].recordDate.getFullYear() == this.dateSelected.getFullYear()){
-  //       this.dateFlag = true;
-  //       break;
-  //     }
-  //   }
-  // }
 
 }

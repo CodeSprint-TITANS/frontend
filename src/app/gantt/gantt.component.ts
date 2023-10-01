@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { DatePipe } from '@angular/common';
 import { moveItemInArray } from '@angular/cdk/drag-drop';
 import { DialogService } from '../services/dialog.service';
+import { FormControl } from '@angular/forms';
 @Component({
   selector: 'app-gantt',
   templateUrl: './gantt.component.html',
@@ -42,6 +43,8 @@ export class GanttComponent {
   ];
 
   filterList;
+
+  dateSelected : any = new FormControl  (new Date()); 
 
   constructor(private datePipe: DatePipe, private dialogService: DialogService) { 
     // this.pendingList.forEach((item) => {

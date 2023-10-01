@@ -10,8 +10,8 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'map', component: MapComponent },
   { path: 'search-user', component: SearchUserComponent },
-  { path: '', component: LoginComponent, pathMatch: 'full' },
-  { path: 'home', component: LoginComponent },
+  { path: '', component: GanttComponent, pathMatch: 'full' },
+  { path: 'overview', component: LoginComponent },
   { path: 'register', component: RegistrationComponent },
   { path: 'gantt', component: GanttComponent },
 ];

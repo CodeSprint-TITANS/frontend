@@ -11,6 +11,7 @@ import {
 } from 'leaflet';
 import { heatData } from '../../../assets/map_data/heatmap';
 import { portLocations } from '../../../assets/map_data/portLocation';
+import { FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-map',
@@ -25,7 +26,7 @@ export class MapComponent implements OnInit {
 
   date: string;
 
-  private time: number = 0;
+  public time: number = 0;
 
   private shapes: any;
 
@@ -34,6 +35,8 @@ export class MapComponent implements OnInit {
   private tiles: any;
 
   private customLocation: any;
+
+  dateSelected : any = new FormControl  (new Date());
 
   ngOnInit(): void {
     this.renderMap();

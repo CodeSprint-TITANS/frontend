@@ -9,7 +9,7 @@
   </mat-form-field>
   <p class="totalTripsTitle">Total of {{totalTrips}} Trips Today</p>
 </div>
-<p class="information">Information <i class="fa fa-info-circle" aria-hidden="true"></i></p>
+<p class="information" (click)="explainModal()">Information <i class="fa fa-info-circle" aria-hidden="true"></i></p>
   <!-- <p>Date: {{dateSelected.value | date: 'MM/dd/yyyy' }}</p> -->
     <div *ngIf="dateFlag; else elseBlock">
         <table class="table">
