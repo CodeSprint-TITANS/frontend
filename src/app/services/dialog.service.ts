@@ -17,11 +17,6 @@ export class DialogService {
       width: '500px',
       data: data,
     });
-    // dialogRef.afterClosed().subscribe(result => {
-    //   console.log('The dialog was closed');
-    //   dialogRef.close();
-    // }
-    // );
     
     return dialogRef;
     

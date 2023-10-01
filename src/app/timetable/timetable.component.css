@@ -23,6 +23,10 @@
   border-top-right-radius: 12px;
 }
 
+.table tr {
+  font-size: 16px;
+}
+
 .table th {
   font-weight: 700;
   background-color: #d1f6fb;
@@ -49,9 +53,10 @@ td .row {
 }
 
 .timetableHeader {
-  display: inline-flex;
+  display: flex;
+  flex-direction: row;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   margin-top: 20px;
 }
 
@@ -63,6 +68,16 @@ mat-label,
 .totalTripsTitle {
   font-weight: 700;
   margin-left: 20px;
+  font-size: 20px;
+}
+
+.information {
+  color: #0059b3;
+  display: flex;
+  flex-direction: row;
+  justify-content: end;
+  align-items: center;
+  cursor: pointer;
 }
 
 .row .col {
@@ -72,7 +87,7 @@ mat-label,
 }
 
 .severe {
-  background: #ffc0cb;
+  background: #fff3c0;
   color: #333;
   padding: 10px; 
   
@@ -114,4 +129,8 @@ mat-label,
 
 .fa-cloud-bolt {
   color: #b3001f;
+}
+
+.fa-info-circle {
+  margin-left: 6px;
 }
