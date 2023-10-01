@@ -6,8 +6,8 @@ export const portLocations = [
     count: 400,
   },
   {
-    port: 'Bukit Panjang Terminal',
-    lat: 1.2650221,
+    port: 'Pasir Panjang Terminal',
+    lat: 1.2700221,
     lng: 103.8050201,
     count: 320,
   },

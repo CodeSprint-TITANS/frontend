@@ -15,7 +15,7 @@ export class DialogService {
 
   openDialogTemplate(data: any ): MatDialogRef<DialogTemplateComponent> {
     const dialogRef = this.dialog.open(DialogTemplateComponent, {
-      position: { top: '0' },
+      position: { top: '100px' },
       width: '500px',
       data: data,
     });
@@ -26,7 +26,7 @@ export class DialogService {
 
   openDialogExplain(): MatDialogRef<ExplainDialogComponent> {
     const dialogRef = this.dialog.open(ExplainDialogComponent, {
-      position: { top: '0' },
+      position: { top: '100px' },
       width: '600px',
       height: '400px',
 

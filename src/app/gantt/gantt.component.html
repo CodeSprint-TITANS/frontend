@@ -1,5 +1,12 @@
 <div style="display:inline-flex; width: 100%; margin-top: 8px;">
-    <div style="flex: 1;">
+    <div style="flex: 1; margin-top: 24px;">
+        <mat-form-field style="margin-left: 8px;">
+            <mat-label>Choose a date</mat-label>
+            <input matInput [matDatepicker]="picker" [formControl]="dateSelected">
+            <!-- <mat-hint>MM/DD/YYYY</mat-hint> -->
+            <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+          </mat-form-field>
         <div style="padding: 0px 8px;">
             <label class="label">Search</label>
             <input style="margin-left: 8px; height: 32px;" (keyup)="search($event)">
