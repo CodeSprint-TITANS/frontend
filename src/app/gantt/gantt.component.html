@@ -36,28 +36,39 @@
                 <div class="item-card">
                     <div style="flex-direction: row; justify-content: space-between; width: 100%;">
 
-                        <div class="item-content">
+                        <div style="border: 1px solid black;">
+                        <div class="item-content" style="background-color: white;color:black;">
                             <label class="label">Container Info</label>
                             <span>Number: {{item.container}}</span>
                             <span>Type: {{item.type}}</span>
                         </div>
-                        <div class="item-content">
+                        <div class="item-content" style="background-color: white;color:black;">
                             <label class="label">Date Time <i (click)="expandItem(i)" style="float: right;"
                                     [ngClass]="item.expand?'fas fa-chevron-up': 'fas fa-chevron-down'"></i></label>
-                            <span>{{item.starttime}} &nbsp; <i class="fa-solid fa-circle-exclamation" (click)="showMessage(item)" [hidden]="!item.recommended"></i></span>
-                            <span>{{item.endtime}}</span>
+                            <span>{{convertDate(item.starttime)}} </span>
+                            <span>{{convertDate(item.endtime)}}</span>
                         </div>
-                        <div class="item-content" [hidden]="!item.expand">
+                        <div class="item-content" [hidden]="!item.expand" style="background-color: white;color:black;">
                             <label class="label">Vehicle Info</label>
                             <span>Number: {{item.vehicle}}</span>
                             <span>Driver: {{item.driver}}</span>
                         </div>
-                        <div class="item-content" [hidden]="!item.expand">
+                        <div class="item-content" [hidden]="!item.expand" style="background-color: white;color:black;">
                             <label class="label">Location</label>
                             <span>From: {{item.from}}</span>
                             <span>To: {{item.to}}</span>
                             <span></span>
                         </div>
+                        </div>
+                        <div class="item-content"  [hidden]="!item.recommended">
+                            <label class="label">Reason</label>
+                            <span>{{item.reason}}</span>
+                        </div>
+                        <div class="item-content" [hidden]="!item.recommended">
+                            <label class="label" >Suggestion &nbsp; <i style="cursor:pointer;color: rgb(255, 204, 0);" class="fa-solid fa-circle-exclamation" (click)="showMessage(item)" [hidden]="!item.recommended"></i></label>
+                            <span>{{item.suggestion}}</span>
+                        </div>
+                        
                     </div>
                 </div>
             </div>
