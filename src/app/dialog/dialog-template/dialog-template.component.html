@@ -1,5 +1,11 @@
 <div style="display:flex; flex-direction:column;">
-<div class="modal-title">Recommend to change timing from <br/> {{this.data.starttime}} to {{'01 Oct 2PM'}}</div>
-<div class="modal-body">Reason due to: {{this.data.reason}}</div>
-<div class="modal-footer"><button>Cancel</button><button style="background-color:green;">Okay</button></div>
+<div class="modal-title">Change Timing Recommendation</div>
+<div class="modal-body"><label style="font-weight:bold;">Reason: &nbsp;</label> {{this.data.reason}}
+</div>
+<div class="modal-body" style="display:flex;flex-wrap: wrap;"><label style="font-weight:bold; width: 100%;">Suggestions</label>
+    <div *ngFor="let item of advices;">
+    <input type="checkbox"/> {{item}}
+</div>
+</div>
+<div class="modal-footer"><button (click)="closeDialog('false')">Cancel</button><button style="background-color:green;" (click)="amendData()">Okay</button></div>
 </div>

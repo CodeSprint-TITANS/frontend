@@ -1,5 +1,7 @@
 import { Component, EventEmitter, Output, Inject } from '@angular/core';
 import { MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { ChangeDetectorRef } from '@angular/core';
+import { DialogService } from 'src/app/services/dialog.service';
 
 @Component({
   selector: 'app-dialog-template',
@@ -7,12 +9,40 @@ import { MAT_DIALOG_DATA } from '@angular/material/dialog';
   styleUrls: ['./dialog-template.component.css']
 })
 export class DialogTemplateComponent {
+  advices: string[];
+  defaultAdvice : string[] = ['Postpone the date to 8.30am where traffic is less', 'Discard the job back into the pool', 'Reassign this job with Howard, who is able to complete the job at an earlier date', 'Go to the closest available timeslot (9am)']
   @Output() dialogClosed = new EventEmitter<string>();
 
-  constructor(@Inject(MAT_DIALOG_DATA) public data: any) { 
-    console.log(this.data)
+  constructor(@Inject(MAT_DIALOG_DATA) public data: any, private dialogService : DialogService) { 
+    this.advices = this.getRandomAdvices(2);
   }
   closeDialog(result: string) {
-    this.dialogClosed.emit(result);
+    // console.log('Close dialog called with result:', result);
+  this.dialogService.closeAllDialogs();
+  }
+
+  amendData(){
+    // console.log("Changed")
+    this.data.recommended = false;
+    if(this.data.suggestion == "Swap the timeslot with another job"){
+      this.data.starttime = "2023-10-01 09:00:00";
+      this.data.endtime = "2023-10-01 09:30:00";
+    }
+    this.dialogService.closeAllDialogs();
+  }
+
+  getRandomAdvices(count: number): string[] {
+    const randomIndexes: number[] = [];
+    const selectedAdvices: string[] = [];
+
+    while (randomIndexes.length < count) {
+      const randomIndex = Math.floor(Math.random() * this.defaultAdvice.length);
+      if (!randomIndexes.includes(randomIndex)) {
+        randomIndexes.push(randomIndex);
+        selectedAdvices.push(this.defaultAdvice[randomIndex]);
+      }
+    }
+
+    return selectedAdvices;
   }
 }
