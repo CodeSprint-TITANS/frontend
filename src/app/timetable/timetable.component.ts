@@ -22,7 +22,7 @@ export class TimetableComponent implements OnInit {
 
   scheduleList: JobSchedule[] = [
     new JobSchedule(
-      'TP Terminal -> JE Warehouse',
+      'TP Terminal >> JE Warehouse',
       '30 mins',
       new Date(2023, 9, 1),
       [
@@ -65,7 +65,7 @@ export class TimetableComponent implements OnInit {
       ],
     ),
     new JobSchedule(
-      'TP Terminal -> AMK Warehouse',
+      'TP Terminal >> AMK Warehouse',
       '40 mins',
       new Date(2023, 9, 1),
       [
@@ -102,7 +102,7 @@ export class TimetableComponent implements OnInit {
       ],
     ),
     new JobSchedule(
-      'Tuas Terminal -> JE Warehouse',
+      'Tuas Terminal >> JE Warehouse',
       '25 mins',
       new Date(2023, 9, 1),
       [
@@ -145,7 +145,7 @@ export class TimetableComponent implements OnInit {
       ],
     ),
     new JobSchedule(
-      'JE Warehouse -> Tuas Terminal',
+      'JE Warehouse >> Tuas Terminal',
       '25 mins',
       new Date(2023, 9, 1),
       [
@@ -188,7 +188,7 @@ export class TimetableComponent implements OnInit {
       ],
     ),
     new JobSchedule(
-      'JE Warehouse -> Depot 1',
+      'JE Warehouse >> Depot 1',
       '55 mins',
       new Date(2023, 9, 1),
       [
@@ -237,7 +237,7 @@ export class TimetableComponent implements OnInit {
       ],
     ),
     new JobSchedule(
-      'JE Warehouse -> Depot 2',
+      'JE Warehouse >> Depot 2',
       '35 mins',
       new Date(2023, 9, 1),
       [
@@ -280,7 +280,7 @@ export class TimetableComponent implements OnInit {
       ],
     ),
     new JobSchedule(
-      'Tuas Terminal -> JE Warehouse',
+      'Tuas Terminal >> JE Warehouse',
       '25 mins',
       new Date(2023, 9, 2),
       [
@@ -322,7 +322,7 @@ export class TimetableComponent implements OnInit {
         ),
       ],
     ), new JobSchedule(
-      'TP Terminal -> JE Warehouse',
+      'TP Terminal >> JE Warehouse',
       '30 mins',
       new Date(2023, 9, 2),
       [
@@ -365,7 +365,7 @@ export class TimetableComponent implements OnInit {
       ],
     ),
     new JobSchedule(
-      'TP Terminal -> AMK Warehouse',
+      'TP Terminal >> AMK Warehouse',
       '40 mins',
       new Date(2023, 9, 2),
       [
@@ -402,7 +402,7 @@ export class TimetableComponent implements OnInit {
       ],
     ),
     new JobSchedule(
-      'JE Warehouse -> Tuas Terminal',
+      'JE Warehouse >> Tuas Terminal',
       '25 mins',
       new Date(2023, 9, 2),
       [
@@ -445,7 +445,7 @@ export class TimetableComponent implements OnInit {
       ],
     ),
     new JobSchedule(
-      'JE Warehouse -> Depot 1',
+      'JE Warehouse >> Depot 1',
       '55 mins',
       new Date(2023, 9, 2),
       [
@@ -494,7 +494,7 @@ export class TimetableComponent implements OnInit {
       ],
     ),
     new JobSchedule(
-      'JE Warehouse -> Depot 2',
+      'JE Warehouse >> Depot 2',
       '35 mins',
       new Date(2023, 9, 2),
       [
