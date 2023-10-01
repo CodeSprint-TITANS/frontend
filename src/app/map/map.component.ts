@@ -3,10 +3,11 @@ import {
   tileLayer,
   map,
   circle,
-  control,
   Circle,
   Layer,
-  TileLayer,
+  layerGroup,
+  marker,
+  divIcon,
 } from 'leaflet';
 import { heatData } from '../../../assets/map_data/heatmap';
 
@@ -22,6 +23,7 @@ export class MapComponent implements OnInit {
   private shapes: any;
   private radius: number = 300;
   private tiles: any;
+  private customLocation: any;
 
   ngOnInit(): void {
     this.renderMap();
@@ -33,6 +35,10 @@ export class MapComponent implements OnInit {
       month: '2-digit',
       year: 'numeric',
     });
+
+    var myIcon = divIcon({ className: 'my-div-icon' });
+
+    this.customLocation = marker([1.352, 103.7598], { icon: myIcon });
   }
 
   onChange(value: number) {
@@ -42,7 +48,6 @@ export class MapComponent implements OnInit {
       this.map.removeLayer(shape);
     });
     this.shapes = this.transformHeatData(heatData.data[value], this.radius);
-    this.map.layers = this.shapes;
     this.tiles = tileLayer(
       'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
       {
@@ -50,7 +55,7 @@ export class MapComponent implements OnInit {
         minZoom: 2,
       }
     );
-    this.tiles.addTo(this.map);
+    layerGroup(this.shapes).addLayer(this.tiles).addTo(this.map);
   }
 
   transformHeatData(heatData: any, radius: number) {
@@ -105,6 +110,7 @@ export class MapComponent implements OnInit {
 
     // Initialising map with center point by using the coordinates
     // Setting initial zoom to 3
+
     this.map = map('map', {
       center: [1.352, 103.8198],
       zoom: 11,
@@ -120,8 +126,42 @@ export class MapComponent implements OnInit {
         minZoom: 2,
       }
     );
+    const label = marker([1.266556, 103.6566116], {
+      icon: divIcon({
+        iconSize: [100, 100],
+        className: 'label',
+        html:
+          '<svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 384 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><style>svg{fill:#1f0891}</style><path d="M215.7 499.2C267 435 384 279.4 384 192C384 86 298 0 192 0S0 86 0 192c0 87.4 117 243 168.3 307.2c12.3 15.3 35.1 15.3 47.4 0zM192 128a64 64 0 1 1 0 128 64 64 0 1 1 0-128z"/></svg><div>' +
+          'Tuas Terminal Gateway' +
+          '</div>',
+      }),
+    });
+    const label1 = marker([1.2650221, 103.8050201], {
+      icon: divIcon({
+        iconSize: [100, 100],
+        className: 'label',
+        html:
+          '<svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 384 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><style>svg{fill:#1f0891}</style><path d="M215.7 499.2C267 435 384 279.4 384 192C384 86 298 0 192 0S0 86 0 192c0 87.4 117 243 168.3 307.2c12.3 15.3 35.1 15.3 47.4 0zM192 128a64 64 0 1 1 0 128 64 64 0 1 1 0-128z"/></svg><div>' +
+          'Bukit Panjang Terminal ' +
+          '</div>',
+      }),
+    });
+
+    const label2 = marker([1.2510221, 103.8810201], {
+      icon: divIcon({
+        iconSize: [100, 100],
+        className: 'label',
+        html:
+          '<svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 384 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><style>svg{fill:#1f0891}</style><path d="M215.7 499.2C267 435 384 279.4 384 192C384 86 298 0 192 0S0 86 0 192c0 87.4 117 243 168.3 307.2c12.3 15.3 35.1 15.3 47.4 0zM192 128a64 64 0 1 1 0 128 64 64 0 1 1 0-128z"/></svg><div>' +
+          'Tanjong Pagar Terminal ' +
+          '</div>',
+      }),
+    });
+
+    layerGroup(this.shapes).addLayer(this.tiles).addTo(this.map);
+    layerGroup([label, label1, label2]).addTo(this.map);
 
     // Adding tiles to the map
-    this.tiles.addTo(this.map);
+    // this.tiles.addTo(this.map);
   }
 }
