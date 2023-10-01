@@ -6,6 +6,7 @@ import { DialogService } from '../services/dialog.service';
   selector: 'app-gantt',
   templateUrl: './gantt.component.html',
   styleUrls: ['./gantt.component.css'],
+  providers: [DatePipe],
 })
 export class GanttComponent {
 
