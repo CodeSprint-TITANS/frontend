@@ -15,7 +15,7 @@ export class AppComponent implements OnInit {
   constructor(private toastr: ToastrService, private loaderService: LoaderService) { }
 
   ngOnInit() {
-    this.toastr.success('Hello world!', 'Toastr fun!');
+    // this.toastr.success('Hello world!', 'Toastr fun!');
 
     this.loaderService.showLoader$.subscribe((showLoader) => {
       this.isLoading = showLoader;

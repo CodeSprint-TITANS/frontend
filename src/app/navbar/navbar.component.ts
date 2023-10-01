@@ -18,7 +18,7 @@ export class NavbarComponent {
   activeLink: navClass = new navClass('', '');
   
   constructor(private router: Router) { 
-    this.links = [{title: 'Login', path: '/login'}, { title: 'Register', path: '/register'}, { title: 'Search', path: 'search-user'}]
+    this.links = [{ title: 'Home', path: '/home' }, { title: 'Map', path: '/register' }, { title: 'Job Schedule', path: 'gantt' }];
     this.activeLink = this.links[0];
   }
 

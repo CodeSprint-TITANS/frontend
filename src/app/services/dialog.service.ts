@@ -9,7 +9,11 @@ import { MatDialogRef } from '@angular/material/dialog';
 export class DialogService {
   constructor(private dialog: MatDialog) { }
 
-  openDialogTemplate(): MatDialogRef<DialogTemplateComponent> {
-    return this.dialog.open(DialogTemplateComponent);
+  openDialogTemplate(data: any ): MatDialogRef<DialogTemplateComponent> {
+
+    return this.dialog.open(DialogTemplateComponent,{
+      width: '500px',
+      data: data}
+      );
   }
 }
