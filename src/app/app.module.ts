@@ -5,11 +5,13 @@ import { CommonModule, DatePipe } from '@angular/common';
 
 // External Modules (UI)
 import { ToastrModule } from 'ngx-toastr';
-import { MatTabsModule } from '@angular/material/tabs'; 
+import { MatTabsModule } from '@angular/material/tabs';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
-import { DragDropModule } from '@angular/cdk/drag-drop';
 import { MatButtonModule } from '@angular/material/button';
 import { MatDialogModule } from '@angular/material/dialog';
+import { LeafletModule } from '@asymmetrik/ngx-leaflet';
+import { MatSliderModule } from '@angular/material/slider';
+import { DragDropModule } from '@angular/cdk/drag-drop';
 import { MatCardModule } from '@angular/material/card';
 
 // Internal Modules
@@ -24,14 +26,16 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { LoginComponent } from './login/login.component';
 import { FooterComponent } from './footer/footer.component';
 import { DialogTemplateComponent } from './dialog/dialog-template/dialog-template.component';
+import { MapComponent } from './map/map.component';
+import { SliderComponent } from './slider/slider.component';
 import { GanttComponent } from './gantt/gantt.component';
 import { ChartComponent } from './chart/chart.component';
 import { CardComponent } from './card/card.component';
 import { TimetableComponent } from './timetable/timetable.component';
-import {MatDatepickerModule} from '@angular/material/datepicker';
-import {MatInputModule} from '@angular/material/input';
-import {MatFormFieldModule} from '@angular/material/form-field';
-import {MatNativeDateModule} from '@angular/material/core';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatInputModule } from '@angular/material/input';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatNativeDateModule } from '@angular/material/core';
 
 @NgModule({
   declarations: [
@@ -42,10 +46,12 @@ import {MatNativeDateModule} from '@angular/material/core';
     LoginComponent,
     FooterComponent,
     DialogTemplateComponent,
+    MapComponent,
+    SliderComponent,
     GanttComponent,
     ChartComponent,
     CardComponent,
-    TimetableComponent
+    TimetableComponent,
   ],
   imports: [
     // External Modules
@@ -65,10 +71,13 @@ import {MatNativeDateModule} from '@angular/material/core';
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    MatFormFieldModule, MatInputModule, MatDatepickerModule, MatNativeDateModule,
+    LeafletModule,
+    MatSliderModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
     CommonModule,
   ],
-  providers: [UserService, DatePipe],
-  bootstrap: [AppComponent]
+  providers: [UserService],
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
