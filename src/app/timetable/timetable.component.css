@@ -1,12 +1,9 @@
 .table {
   height: 400px;
   font-size: 14px;
+  border: #333;
+  overflow-y: scroll;
 }
-
-table th:first-child {
-    font-size: 16px;
-}
-
 
 .table th:first-child,
 .table td:first-child {
@@ -19,33 +16,102 @@ table th:first-child {
   width: 80px;
 }
 
-.severe {
-  /* background: repeating-linear-gradient(45deg, transparent, transparent 10px, red 10px, white 20px); */
-  background: pink;
-  color: #333; /* Text color */
-  padding: 10px; /* Add padding for content */
+.table th:first-child {
+  border-top-left-radius: 12px;
 }
-.CellWithComment {
-  position: relative;
+.table th:last-child {
+  border-top-right-radius: 12px;
 }
 
-.CellComment {
+.table th {
+  font-weight: 700;
+  background-color: #d1f6fb;
+  color: #0059b3;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
+tbody tr td p {
+  font-style: italic;
+  color: #0059b3;
+}
+
+td .row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.displayTime {
+  font-style: italic;
+  color: #564D4E;
+}
+
+.timetableHeader {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+mat-label,
+.mat-mdc-form-field-input-control.mat-mdc-form-field-input-control {
+  font-family: 'Poppins' !important;  
+}
+
+.totalTripsTitle {
+  font-weight: 700;
+  margin-left: 20px;
+}
+
+.row .col {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.severe {
+  background: pink;
+  color: #333;
+  padding: 10px; 
+  
+}
+
+.cellWithComment {
+  position: relative;
+  cursor: help;
+}
+
+.cellComment {
   display: none;
   position: absolute;
-  z-index: 100;
+  z-index: 2;
   border: 1px;
-  background-color: white;
+  background-color: #d1f6fb;
   border-style: solid;
   border-width: 1px;
-  border-color: pink;
-  padding: 3px;
-  color: black;
-  top: 40px;
-  left: 40px;
-  width: 150px;
-  height: 150px;
+  border-color: #0059b3;
+  padding: 8px 4px ;
+  color: #0059b3;
+  top: 0px;
+  left: 84px;
+  width: min-content;
+  min-width: 150px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  text-align: start;
+  place-content: center;
 }
 
-.CellWithComment:hover span.CellComment {
+.cellWithComment:hover span.cellComment {
   display: block;
+}
+
+.jobTrips {
+  font-size: 26px;
+  font-weight: 700;
+}
+
+.fa-cloud-bolt {
+  color: #b3001f;
 }

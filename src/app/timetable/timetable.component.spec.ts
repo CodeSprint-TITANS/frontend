@@ -8,7 +8,7 @@ describe('TimetableComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [TimetableComponent]
+      declarations: [TimetableComponent],
     });
     fixture = TestBed.createComponent(TimetableComponent);
     component = fixture.componentInstance;

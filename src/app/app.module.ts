@@ -28,10 +28,10 @@ import { GanttComponent } from './gantt/gantt.component';
 import { ChartComponent } from './chart/chart.component';
 import { CardComponent } from './card/card.component';
 import { TimetableComponent } from './timetable/timetable.component';
-import {MatDatepickerModule} from '@angular/material/datepicker';
-import {MatInputModule} from '@angular/material/input';
-import {MatFormFieldModule} from '@angular/material/form-field';
-import {MatNativeDateModule} from '@angular/material/core';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatInputModule } from '@angular/material/input';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatNativeDateModule } from '@angular/material/core';
 
 @NgModule({
   declarations: [
@@ -45,7 +45,7 @@ import {MatNativeDateModule} from '@angular/material/core';
     GanttComponent,
     ChartComponent,
     CardComponent,
-    TimetableComponent
+    TimetableComponent,
   ],
   imports: [
     // External Modules
@@ -69,6 +69,6 @@ import {MatNativeDateModule} from '@angular/material/core';
     CommonModule,
   ],
   providers: [UserService, DatePipe],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
 export class AppModule { }
