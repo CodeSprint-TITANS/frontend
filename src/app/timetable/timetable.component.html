@@ -1,0 +1,75 @@
+<div>
+  <mat-form-field>
+    <mat-label>Choose a date</mat-label>
+    <input matInput [matDatepicker]="picker" (dateChange)="valueChange($event)" [formControl]="dateSelected">
+    <!-- <mat-hint>MM/DD/YYYY</mat-hint> -->
+    <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-datepicker #picker></mat-datepicker>
+  </mat-form-field>
+  <p>Date: {{dateSelected.value | date: 'MM/dd/yyyy' }}</p>
+    <div *ngIf="dateFlag; else elseBlock">
+        <div class="flex">
+            <app-card [titleData]="'Total Trips'" [numberData]="80"></app-card>
+            <!-- <app-card [titleData]="'Total Drivers'" [numberData]={}></app-card> -->
+        </div>
+        <table class="table">
+            <thead>
+              <tr class="table-info" style="font-size: 16px;">
+                <th scope="col">Location \ Time</th>
+                <!-- <th scope="col">7 - 8am</th>
+                  <th scope="col">8 - 9am</th>
+                  <th scope="col">9 - 10am</th>
+                  <th scope="col">10 - 11am</th>
+                  <th scope="col">11 - 12pm</th>
+                  <th scope="col">12 - 1pm</th>
+                  <th scope="col">1 - 2pm</th    >
+                  <th scope="col">2 - 3pm</th>
+                  <th scope="col">3 - 4pm</th>
+                  <th scope="col">4 - 5pm</th>
+                  <th scope="col">5 - 6pm</th>
+                  <th scope="col">6 - 7pm</th>
+                 -->
+        
+                <th scope="col">7am</th>
+                <th scope="col">8am</th>
+                <th scope="col">9am</th>
+                <th scope="col">10am</th>
+                <th scope="col">11am</th>
+                <th scope="col">12pm</th>
+                <th scope="col">1pm</th>
+                <th scope="col">2pm</th>
+                <th scope="col">3pm</th>
+                <th scope="col">4pm</th>
+                <th scope="col">5pm</th>
+                <th scope="col">6pm</th>
+              </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let record of filteredList">
+                    <td>{{ record.location  }} <br>{{record.timeTaken}}</td>
+                    <td *ngFor="let job of record.jobDetailList" [class.severe]="job.congestionFlag" [class.CellWithComment]="job.congestionFlag" >
+                        <div class="row">
+                            <div class="col">
+                                {{job.trips}}
+                            </div>
+                            <div class="col">
+                                <div *ngIf="job.weatherFlag"> 
+                                    <i class="fa-solid fa-cloud-bolt fa-sm"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <br>
+                        {{job.estimatedTime}}
+                        <span class="CellComment">
+                            {{job.congestionTiming}}
+                        </span>
+                    </td>
+                </tr>
+            </tbody>
+          </table>
+    </div>
+    <ng-template #elseBlock>
+        <p>Schedule is not generated yet.</p>
+    </ng-template>
+  
+</div>
