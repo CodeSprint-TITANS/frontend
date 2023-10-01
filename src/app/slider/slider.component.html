@@ -1,5 +1,3 @@
-<p></p>
-
-<mat-slider class="w-100" min="0" max="93" step="step" showTickMarks discrete [displayWith]="formatLabel">
+<mat-slider class="w-100" min="0" max="93" step="step" showTickMarks [displayWith]="formatLabel">
     <input matSliderThumb (valueChange)="changeTime($event)">
 </mat-slider>
