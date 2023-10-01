@@ -1,6 +1,5 @@
 import { Component, EventEmitter, Output, Inject } from '@angular/core';
 import { MAT_DIALOG_DATA } from '@angular/material/dialog';
-import { ChangeDetectorRef } from '@angular/core';
 import { DialogService } from 'src/app/services/dialog.service';
 
 @Component({
@@ -10,7 +9,9 @@ import { DialogService } from 'src/app/services/dialog.service';
 })
 export class DialogTemplateComponent {
   advices: string[];
-  defaultAdvice : string[] = ['Postpone the date to 8.30am where traffic is less', 'Discard the job back into the pool', 'Reassign this job with Howard, who is able to complete the job at an earlier date', 'Go to the closest available timeslot (9am)']
+
+  defaultAdvice : string[] = ['Postpone the date to 8.30am where traffic is less', 'Discard the job back into the pool', 'Reassign this job with Howard, who is able to complete the job at an earlier date', 'Go to the closest available timeslot (9am)'];
+
   @Output() dialogClosed = new EventEmitter<string>();
 
   constructor(@Inject(MAT_DIALOG_DATA) public data: any, private dialogService : DialogService) { 
@@ -19,15 +20,15 @@ export class DialogTemplateComponent {
 
   closeDialog(result: string) {
     // console.log('Close dialog called with result:', result);
-  this.dialogService.closeAllDialogs();
+    this.dialogService.closeAllDialogs();
   }
 
-  amendData(){
+  amendData() {
     // console.log("Changed")
     this.data.recommended = false;
-    if(this.data.suggestion == "Swap the timeslot with another job"){
-      this.data.starttime = "2023-10-01 09:00:00";
-      this.data.endtime = "2023-10-01 09:30:00";
+    if (this.data.suggestion == 'Swap the timeslot with another job') {
+      this.data.starttime = '2023-10-01 09:00:00';
+      this.data.endtime = '2023-10-01 09:30:00';
     }
     this.dialogService.closeAllDialogs();
   }

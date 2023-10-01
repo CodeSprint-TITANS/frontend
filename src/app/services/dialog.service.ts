@@ -15,7 +15,7 @@ export class DialogService {
   openDialogTemplate(data: any ): MatDialogRef<DialogTemplateComponent> {
     const dialogRef = this.dialog.open(DialogTemplateComponent, {
       width: '500px',
-      data: data
+      data: data,
     });
     // dialogRef.afterClosed().subscribe(result => {
     //   console.log('The dialog was closed');
@@ -27,7 +27,7 @@ export class DialogService {
     
   }
 
-  closeAllDialogs(){
+  closeAllDialogs() {
     this.dialog.closeAll();
   }
 }

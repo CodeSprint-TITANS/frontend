@@ -14,16 +14,15 @@ import { DialogService } from '../services/dialog.service';
 })
 export class ChartComponent implements AfterViewInit {
   @Input() data: any;
-
   driverList: any;
-
   timingList: any[] = [];
 
-
-
-  constructor(private cdr: ChangeDetectorRef, private el: ElementRef, private renderer: Renderer2, private dialogService: DialogService) {
-
-  }
+  constructor(
+    private cdr: ChangeDetectorRef,
+    private el: ElementRef,
+    private renderer: Renderer2,
+    private dialogService: DialogService
+  ) {}
 
   ngAfterViewChecked() {
     // Find all elements with data-item attribute
@@ -45,12 +44,11 @@ export class ChartComponent implements AfterViewInit {
           createTd.style.width = '100px';
           createTd.setAttribute('data-item', `${i}`);
           // Create a new td element
-        //   if (this.timingList[i][x]) {
-        // console.log(i,x)
-        //     createTd.style.backgroundColor = "pink";
-        //     this.renderer.appendChild(elementWithDataboxAttribute, createTd);
-        //   }
-          
+          //   if (this.timingList[i][x]) {
+          // console.log(i,x)
+          //     createTd.style.backgroundColor = "pink";
+          //     this.renderer.appendChild(elementWithDataboxAttribute, createTd);
+          //   }
         }
       }
     }
@@ -87,31 +85,45 @@ export class ChartComponent implements AfterViewInit {
     // this.timingList[0][1] = true;
     // this.timingList[0][1] = true;
 
-    const setData = document.getElementById("insert-data")
+    const setData = document.getElementById('insert-data');
     const coordinateX = setData?.getBoundingClientRect().x ?? 0;
 
     this.data.map((item: any) => {
       const div = document.createElement('div');
       div.style.position = 'absolute';
 
-      div.style.left = `${((this.findMinuteDiffrence(new Date(item.starttime), new Date(new Date().setHours(8, 0, 0, 0)))*60)/600) * 1010}px`
-      div.style.marginTop = "12px";
-      div.style.marginBottom = "12px";
-      div.style.marginLeft = "4px";
-      div.style.marginRight = "8px";
-      if(item.recommended){
-      div.style.backgroundColor = "#ffcc00";
-      }else{
-        div.style.backgroundColor = "#777";
+      div.style.left = `${
+        ((this.findMinuteDiffrence(
+          new Date(item.starttime),
+          new Date(new Date().setHours(8, 0, 0, 0))
+        ) *
+          60) /
+          600) *
+        1010
+      }px`;
+      div.style.marginTop = '12px';
+      div.style.marginBottom = '12px';
+      div.style.marginLeft = '4px';
+      div.style.marginRight = '8px';
+      if (item.recommended) {
+        div.style.backgroundColor = '#ffcc00';
+      } else {
+        div.style.backgroundColor = '#777';
       }
-      div.style.color = "white";
-      div.style.cursor = "pointer";
-      
+      div.style.color = 'white';
+      div.style.cursor = 'pointer';
+
       div.title = `${item.vehicle} ${item.container} ${item.type}`;
-      div.style.width = `${this.findMinuteDiffrence(item.endtime, item.starttime) * 100}px`;
-      div.style.top = `${this.driverList.findIndex((driver: any) => driver.driver === item.driver) * 48}px`;
+      div.style.width = `${
+        this.findMinuteDiffrence(item.endtime, item.starttime) * 100
+      }px`;
+      div.style.top = `${
+        this.driverList.findIndex(
+          (driver: any) => driver.driver === item.driver
+        ) * 48
+      }px`;
       div.innerHTML = item.container;
-      div.addEventListener("click", (item) => {
+      div.addEventListener('click', (item) => {
         // Function to be executed when the div is clicked
         this.dialogService.openDialogTemplate(item); // Call your specific function here with the 'item' parameter
       });
