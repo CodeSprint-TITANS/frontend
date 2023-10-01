@@ -1,6 +1,11 @@
 #map {
   width: 30vw;
-  height: 30vh;
+  height: 80vh;
+}
+
+.mapRow {
+  padding: 4px;
+  margin-bottom: 80px;
 }
 
 .myBox {
