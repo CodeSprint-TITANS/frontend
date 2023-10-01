@@ -6,12 +6,10 @@ import { LoginComponent } from './login/login.component';
 import { GanttComponent } from './gantt/gantt.component';
 
 const routes: Routes = [
-  {
-    path: "", component: LoginComponent, pathMatch: "full"},
-      { path: "login", component: LoginComponent },
-      { path: "register", component: RegistrationComponent },
-      { path: "search-user", component: SearchUserComponent },
-      { path: "gantt", component: GanttComponent }
+  { path: '', component: LoginComponent, pathMatch: 'full' },
+  { path: 'home', component: LoginComponent },
+  { path: 'register', component: RegistrationComponent },
+  { path: 'gantt', component: GanttComponent },
 ];
 
 @NgModule({

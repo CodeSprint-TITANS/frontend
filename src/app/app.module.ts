@@ -8,8 +8,6 @@ import { ToastrModule } from 'ngx-toastr';
 import { MatTabsModule } from '@angular/material/tabs'; 
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { DragDropModule } from '@angular/cdk/drag-drop';
-import {MatFormFieldModule} from '@angular/material/form-field'; 
-import {MatInputModule} from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatCardModule } from '@angular/material/card';
@@ -20,7 +18,7 @@ import { AppComponent } from './app.component';
 import { RegistrationComponent } from './registration/registration.component';
 import { SearchUserComponent } from './search-user/search-user.component';
 import { HttpClientModule } from '@angular/common/http';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { UserService } from './services/user.service';
 import { NavbarComponent } from './navbar/navbar.component';
 import { LoginComponent } from './login/login.component';
@@ -29,6 +27,11 @@ import { DialogTemplateComponent } from './dialog/dialog-template/dialog-templat
 import { GanttComponent } from './gantt/gantt.component';
 import { ChartComponent } from './chart/chart.component';
 import { CardComponent } from './card/card.component';
+import { TimetableComponent } from './timetable/timetable.component';
+import {MatDatepickerModule} from '@angular/material/datepicker';
+import {MatInputModule} from '@angular/material/input';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatNativeDateModule} from '@angular/material/core';
 
 @NgModule({
   declarations: [
@@ -42,6 +45,7 @@ import { CardComponent } from './card/card.component';
     GanttComponent,
     ChartComponent,
     CardComponent,
+    TimetableComponent
   ],
   imports: [
     // External Modules
@@ -56,10 +60,12 @@ import { CardComponent } from './card/card.component';
     MatInputModule,
     MatCardModule,
     // Internal Modules
+    ReactiveFormsModule,
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
+    MatFormFieldModule, MatInputModule, MatDatepickerModule, MatNativeDateModule,
     CommonModule,
   ],
   providers: [UserService, DatePipe],
