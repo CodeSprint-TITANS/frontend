@@ -15,16 +15,15 @@ export class DialogTemplateComponent {
   @Output() dialogClosed = new EventEmitter<string>();
 
   constructor(@Inject(MAT_DIALOG_DATA) public data: any, private dialogService : DialogService) { 
+    console.log(this.data)
     this.advices = this.getRandomAdvices(2);
   }
 
   closeDialog(result: string) {
-    // console.log('Close dialog called with result:', result);
     this.dialogService.closeAllDialogs();
   }
 
   amendData() {
-    // console.log("Changed")
     this.data.recommended = false;
     if (this.data.suggestion == 'Swap the timeslot with another job') {
       this.data.starttime = '2023-10-01 09:00:00';

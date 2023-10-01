@@ -544,11 +544,8 @@ export class TimetableComponent implements OnInit {
   }
 
   valueChange(): void {
-    console.log('test');
-    console.log(this.dateSelected.value);
     this.filteredList = this.scheduleList.filter((item: any) => (item.recordDate.getDate() == this.dateSelected.value.getDate() && item.recordDate.getMonth() == this.dateSelected.value.getMonth() && item.recordDate.getFullYear() == this.dateSelected.value.getFullYear()));
     
-    console.log(this.filteredList);
     if (this.filteredList.length != 0) {
       this.dateFlag = true;
     } else {
@@ -558,7 +555,6 @@ export class TimetableComponent implements OnInit {
 
   ngOnInit(): void {
     this.filteredList = this.scheduleList.filter((item: any) => (item.recordDate.getDate() == this.dateSelected.value.getDate() && item.recordDate.getMonth() == this.dateSelected.value.getMonth() && item.recordDate.getFullYear() == this.dateSelected.value.getFullYear()));
-    console.log(this.filteredList);
     if (this.filteredList.length != 0) {
       this.dateFlag = true;
     } else {
@@ -566,16 +562,5 @@ export class TimetableComponent implements OnInit {
     }
   }
 
-  // ngDoCheck(): void {
-  //   console.log("check")
-  //   for (const record in this.scheduleList){
-  //     if (this.scheduleList[record].recordDate.getDate() == this.dateSelected.getDate() && 
-  //       this.scheduleList[record].recordDate.getMonth() == this.dateSelected.getMonth() &&
-  //       this.scheduleList[record].recordDate.getFullYear() == this.dateSelected.getFullYear()){
-  //       this.dateFlag = true;
-  //       break;
-  //     }
-  //   }
-  // }
 
 }
