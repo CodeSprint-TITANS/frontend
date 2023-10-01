@@ -18,7 +18,7 @@ export class NavbarComponent {
 
   constructor(private router: Router) {
     this.links = [
-      { title: 'Job Schedule', path: '/gantt' },
+      { title: 'Job Schedule', path: '/' },
       { title: 'Overview', path: '/overview' },
       { title: 'Map', path: '/map' },
     ];
