@@ -21,9 +21,11 @@
             </div>
             <br>
             <div>
-                <div class='myBox green'></div>No
+                <div class='myBox green'></div>Healthy
             </div>
         </div>
     </div>
-    <div class="row p-2"><app-slider (newTime)="onChange($event)"></app-slider></div>
+    <div class="row in p-2">
+        <p>Select TIme</p><app-slider class="w-100" (newTime)="onChange($event)"></app-slider>
+    </div>
 </div>
