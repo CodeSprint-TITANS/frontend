@@ -55,3 +55,8 @@ button {
   display: flex;
   justify-content: space-between;
 }
+
+.mdc-slider .mdc-slider__value-indicator {
+  transform: none !important;
+  opacity: 1 !important;
+}

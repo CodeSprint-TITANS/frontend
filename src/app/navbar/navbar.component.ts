@@ -19,7 +19,7 @@ export class NavbarComponent {
     this.links = [
       { title: 'Home', path: '/home' },
       { title: 'Map', path: '/map' },
-      { title: 'Job Schedule', path: 'gantt' },
+      { title: 'Job Schedule', path: '/gantt' },
     ];
     this.activeLink = this.links[0];
   }

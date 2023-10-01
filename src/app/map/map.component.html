@@ -1,31 +1,33 @@
-<div class="container flex" style="height: 50vh;">
-    <div class="row w-100 p-2">
-        {{date}}
+<div class="container flex" style="height: 50vh">
+  <div class="row mapRow w-100 h-100">
+    <div class="col-9">
+      <p class="dateTitle">
+        {{ date }}
+      </p>
+      <div id="map" class="w-100 h-100"></div>
     </div>
-    <div class="row p-4 w-100 h-100">
-        <div class="col-9">
-            <div id="map" class="w-100 h-100"></div>
-        </div>
-        <div class="col-3 h-50 d-flex flex-column">
-            <div class="p-2">Congestion Legend:</div>
-            <div>
-                <div class='myBox red'></div>High
-            </div>
-            <br>
-            <div>
-                <div class='myBox orange'></div> Med
-            </div>
-            <br>
-            <div>
-                <div class='myBox yellow'></div>Low
-            </div>
-            <br>
-            <div>
-                <div class='myBox green'></div>Healthy
-            </div>
-        </div>
+    <div class="col-3 d-flex flex-column ">
+      <p>Congestion Legend:</p>
+      <div>
+        <div class="myBox redLegend"></div>
+        High
+      </div>
+      <div>
+        <div class="myBox orangeLegend"></div>
+        Med
+      </div>
+      <div>
+        <div class="myBox yellowLegend"></div>
+        Low
+      </div>
+      <div>
+        <div class="myBox greenLegend"></div>
+        Healthy
+      </div>
     </div>
-    <div class="row in p-2">
-        <p>Select TIme</p><app-slider class="w-100" (newTime)="onChange($event)"></app-slider>
-    </div>
+  </div>
+  <div class="row">
+    <p>Select Time</p>
+    <app-slider (newTime)="onChange($event)"></app-slider>
+  </div>
 </div>
