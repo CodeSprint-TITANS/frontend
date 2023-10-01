@@ -1,5 +1,4 @@
 import { Component, Input } from '@angular/core';
-import { MatCardModule } from '@angular/material/card';
 
 @Component({
   selector: 'app-card',
@@ -8,6 +7,5 @@ import { MatCardModule } from '@angular/material/card';
 })
 export class CardComponent {
   @Input() titleData: string = '';
-
   @Input() numberData: number = 0;
 }

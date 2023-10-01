@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { DialogService } from '../services/dialog.service';
 
 @Component({
@@ -6,19 +6,8 @@ import { DialogService } from '../services/dialog.service';
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css'],
 })
-export class LoginComponent implements OnInit {
+export class LoginComponent {
 
-  constructor(private dialogService : DialogService) {
-    
+  constructor(private dialogService : DialogService) {    
   }
-
-  
-  ngOnInit(): void {
-      
-  }
-
-  // openDialog(){
-  //   console.log("open modal")
-  //   this.dialogService.openDialogTemplate();
-  // }
 }

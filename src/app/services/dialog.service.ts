@@ -4,7 +4,7 @@ import { DialogTemplateComponent } from '../dialog/dialog-template/dialog-templa
 import { MatDialogRef } from '@angular/material/dialog';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class DialogService {
 
@@ -15,19 +15,14 @@ export class DialogService {
   openDialogTemplate(data: any ): MatDialogRef<DialogTemplateComponent> {
     const dialogRef = this.dialog.open(DialogTemplateComponent, {
       width: '500px',
-      data: data
+      data: data,
     });
-    // dialogRef.afterClosed().subscribe(result => {
-    //   console.log('The dialog was closed');
-    //   dialogRef.close();
-    // }
-    // );
     
     return dialogRef;
     
   }
 
-  closeAllDialogs(){
+  closeAllDialogs() {
     this.dialog.closeAll();
   }
 }
