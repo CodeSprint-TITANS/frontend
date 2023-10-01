@@ -4,6 +4,7 @@ import { RegistrationComponent } from './registration/registration.component';
 import { LoginComponent } from './login/login.component';
 import { MapComponent } from 'src/app/map/map.component';
 import { GanttComponent } from './gantt/gantt.component';
+import { SearchUserComponent } from './search-user/search-user.component';
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
