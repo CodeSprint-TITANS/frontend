@@ -2,8 +2,8 @@ import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 
 // Typescript Class Objects
-class NavClass {
-  constructor(public path: string, public title: string) { }
+class navClass {
+  constructor(public path: string, public title: string) {}
 }
 
 @Component({
@@ -11,24 +11,21 @@ class NavClass {
   templateUrl: './navbar.component.html',
   styleUrls: ['./navbar.component.css'],
 })
-
 export class NavbarComponent {
+  links: navClass[] = [];
+  activeLink: navClass = new navClass('', '');
 
-  links:NavClass[] = [];
-
-  activeLink: NavClass = new NavClass('', '');
-  
-  constructor(private router: Router) { 
-    this.links = [{ title: 'Home', path: '/home' }, { title: 'Map', path: '/register' }, { title: 'Job Schedule', path: 'gantt' }];
+  constructor(private router: Router) {
+    this.links = [
+      { title: 'Home', path: '/home' },
+      { title: 'Map', path: '/map' },
+      { title: 'Job Schedule', path: 'gantt' },
+    ];
     this.activeLink = this.links[0];
   }
 
-
-  switchTab(link: NavClass) {
+  switchTab(link: navClass) {
     this.activeLink = link;
     this.router.navigateByUrl(link.path);
   }
-
 }
-
-
