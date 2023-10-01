@@ -7,5 +7,6 @@ import { Component, Input } from '@angular/core';
 })
 export class CardComponent {
   @Input() titleData: string = '';
+
   @Input() numberData: number = 0;
 }

@@ -9,6 +9,7 @@ import { User } from '../User';
 })
 export class RegistrationComponent {
   user: User = new User('', '');
+
   message: any;
 
   constructor(private service: UserService) {}

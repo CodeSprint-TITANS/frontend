@@ -8,6 +8,10 @@
   margin-bottom: 80px;
 }
 
+.legendContainer {
+  margin-top: 50px;
+}
+
 .myBox {
   float: left;
   height: 2rem;
@@ -15,6 +19,7 @@
   margin-bottom: 15px;
   clear: both;
   margin-right: 1.2rem;
+  box-shadow: 0 0 4px #00000030;
 }
 
 .redLegend {
@@ -33,7 +38,8 @@
   background-color: #ffa500;
 }
 
-.dateTitle {
+h2 {
   font-weight: 700;
-  font-size: 20px;
+  font-size: 16px;
+  margin-bottom: 30px;
 }
