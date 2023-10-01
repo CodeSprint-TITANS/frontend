@@ -14,14 +14,16 @@ import { DialogService } from '../services/dialog.service';
 })
 export class ChartComponent implements AfterViewInit {
   @Input() data: any;
+
   driverList: any;
+
   timingList: any[] = [];
 
   constructor(
     private cdr: ChangeDetectorRef,
     private el: ElementRef,
     private renderer: Renderer2,
-    private dialogService: DialogService
+    private dialogService: DialogService,
   ) {}
 
   ngAfterViewChecked() {
@@ -34,7 +36,7 @@ export class ChartComponent implements AfterViewInit {
     });
     for (let i = 0; i < this.driverList.length; i++) {
       const elementWithDataboxAttribute = this.el.nativeElement.querySelector(
-        `[data-box="${i}"]`
+        `[data-box="${i}"]`,
       );
 
       if (elementWithDataboxAttribute) {
@@ -95,7 +97,7 @@ export class ChartComponent implements AfterViewInit {
       div.style.left = `${
         ((this.findMinuteDiffrence(
           new Date(item.starttime),
-          new Date(new Date().setHours(8, 0, 0, 0))
+          new Date(new Date().setHours(8, 0, 0, 0)),
         ) *
           60) /
           600) *
@@ -119,7 +121,7 @@ export class ChartComponent implements AfterViewInit {
       }px`;
       div.style.top = `${
         this.driverList.findIndex(
-          (driver: any) => driver.driver === item.driver
+          (driver: any) => driver.driver === item.driver,
         ) * 48
       }px`;
       div.innerHTML = item.container;

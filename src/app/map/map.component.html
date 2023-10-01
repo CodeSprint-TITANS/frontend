@@ -1,13 +1,13 @@
 <div class="container flex" style="height: 50vh">
   <div class="row mapRow w-100 h-100">
     <div class="col-9">
-      <p class="dateTitle">
+      <h2>
         {{ date }}
-      </p>
+      </h2>
       <div id="map" class="w-100 h-100"></div>
     </div>
-    <div class="col-3 d-flex flex-column ">
-      <p>Congestion Legend:</p>
+    <div class="col-3 d-flex flex-column legendContainer">
+      <h2>Congestion Legend:</h2>
       <div>
         <div class="myBox redLegend"></div>
         High
@@ -27,7 +27,7 @@
     </div>
   </div>
   <div class="row">
-    <p>Select Time</p>
+    <h2>Select Time:</h2>
     <app-slider (newTime)="onChange($event)"></app-slider>
   </div>
 </div>

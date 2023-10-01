@@ -13,6 +13,7 @@ class navClass {
 })
 export class NavbarComponent {
   links: navClass[] = [];
+
   activeLink: navClass = new navClass('', '');
 
   constructor(private router: Router) {

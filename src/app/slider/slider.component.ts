@@ -6,12 +6,12 @@ import { Component, Output, EventEmitter, Input } from '@angular/core';
   styleUrls: ['./slider.component.css'],
 })
 export class SliderComponent {
-  constructor() {}
-
   @Output() newTime = new EventEmitter<number>();
 
   selectedTime: number = 0;
+
   step = 1;
+
   formatLabel(value: number): string {
     const _hours = Math.floor((value + 1) / 4);
     if (_hours.toString().length != 2) var hours = '0' + _hours.toString();
@@ -23,6 +23,7 @@ export class SliderComponent {
     const result = `${hours}${mins}hrs`;
     return `${result}`;
   }
+
   changeTime(time: any) {
     this.newTime.emit(time);
   }
