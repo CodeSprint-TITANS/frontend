@@ -1,4 +1,4 @@
-import { Component, ElementRef, Renderer2, AfterViewInit, ViewChild, Input } from '@angular/core';
+import { Component, ElementRef, Renderer2, AfterViewInit, Input } from '@angular/core';
 import { ChangeDetectorRef } from '@angular/core';
 @Component({
   selector: 'app-chart',
@@ -7,15 +7,10 @@ import { ChangeDetectorRef } from '@angular/core';
 })
 export class ChartComponent implements AfterViewInit {
   @Input() data: any;
-
   driverList: any;
-
   timingList: any[] = [];
 
-
-
   constructor(private cdr: ChangeDetectorRef, private el: ElementRef, private renderer: Renderer2) {
-
   }
 
   ngAfterViewChecked() {
