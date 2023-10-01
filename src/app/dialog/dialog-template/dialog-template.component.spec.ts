@@ -8,7 +8,7 @@ describe('DialogTemplateComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [DialogTemplateComponent]
+      declarations: [DialogTemplateComponent],
     });
     fixture = TestBed.createComponent(DialogTemplateComponent);
     component = fixture.componentInstance;

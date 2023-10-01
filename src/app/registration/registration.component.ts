@@ -13,10 +13,8 @@ export class RegistrationComponent {
 
   constructor(private service: UserService) {}
 
-  ngOnInit() {}
-
   public registerNow() {
-    let resp = this.service.register(this.user);
+    const resp = this.service.register(this.user);
     resp.subscribe((data) => (
       this.message = data.toString));
   }
