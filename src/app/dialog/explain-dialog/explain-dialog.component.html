@@ -1,0 +1,61 @@
+
+
+<div>
+<div class="modal-title" style="margin-bottom: 24px; ">
+    More Information
+</div>
+
+<div style="display: flex; flex-direction: column; margin: 24px; row-gap: 24px; overflow: auto;">
+    <div style="width: 100%; display:flex; flex-direction: row; column-gap: 16px; ">
+        <div style=" width: 50%; height: 100%;">
+        <p style="font-weight: bold;">1 - Address Location</p>
+        <p>Shows the address between two major nodes of the supply chain</p>
+    </div>
+    <div>
+        <img src="assets/location.png" style=" height:100%; width: 100%;"/>
+    </div>
+    </div>
+
+    <div style="width: 100%; display:flex; flex-direction: row; column-gap: 16px;">
+        <div>
+        <img src="assets/averagetime.png" style=" height:100%; width: 100%;"/>
+    </div>
+    <div style=" width: 50%; height: 100%;">
+        <p style="font-weight: bold;">2 - Fulfilment Time</p>
+        <p>Time expected to finish the order.</p>
+    </div>
+    </div>
+
+    <div style="width: 100%; display:flex; flex-direction: row; column-gap: 16px;">
+        <div style=" width: 50%; height: 100%;">
+        <p style="font-weight: bold;">3 - Predictive Time Estimate</p>
+        <p>AI derived time estimate of the delivery.</p>
+    </div>
+    <div>
+        <img src="assets/trips.png" style=" height:100%; width: 100%;"/>
+    </div>
+    </div>
+
+    <div style="width: 100%; display:flex; flex-direction: row; column-gap: 16px;">
+        <div>
+        <img src="assets/timetaken.png" style=" height:100%; width: 100%;"/>
+    </div>
+    <div style=" width: 50%; height: 100%;">
+        <p style="font-weight: bold;">4 - Number of trips</p>
+        <p>The total amount of drivers cross through this route at a specific time.</p>
+    </div>
+    </div>
+
+    <div style="width: 100%; display:flex; flex-direction: row; column-gap: 16px;">
+        <div style=" width: 50%; height: 100%;">
+        <p style="font-weight: bold;">5 - Weather Forecast</p>
+        <p>Provide external APIs to detect weather changes</p>
+    </div>
+    <div>
+        <img src="assets/weather.png" style=" height:100%; width: 100%;"/>
+    </div>
+    </div>
+
+</div>
+<div class="modal-footer"><button (click)="closeDialog()" style="color:white; background-color: green;">Okay</button></div>
+</div>

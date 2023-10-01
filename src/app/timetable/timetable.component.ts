@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { JobSchedule } from '../JobSchedule';
 import { JobDetail } from '../JobDetail';
 import { FormControl } from '@angular/forms';
+import { DialogService } from '../services/dialog.service';
 
 @Component({
   selector: 'app-timetable',
@@ -14,6 +15,8 @@ export class TimetableComponent implements OnInit {
   dateSelected: any = new FormControl(new Date());
 
   dateFlag: boolean = false;
+
+  constructor(private dialogService: DialogService) { }
 
   filteredList: JobSchedule[] = [];
 
@@ -535,6 +538,10 @@ export class TimetableComponent implements OnInit {
     ),
 
   ];
+
+  explainModal(): void{
+    this.dialogService.openDialogExplain();
+  }
 
   valueChange(): void {
     console.log('test');
