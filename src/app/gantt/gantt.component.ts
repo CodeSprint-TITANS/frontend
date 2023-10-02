@@ -47,12 +47,37 @@ export class GanttComponent {
   dateSelected : any = new FormControl  (new Date()); 
 
   constructor(private datePipe: DatePipe, private dialogService: DialogService) { 
-    // this.pendingList.forEach((item) => {
-    //   item.starttime = this.convertDate(item.starttime);
-    //   item.endtime = this.convertDate(item.endtime);
-    // })
+    this.pendingList.forEach((item) => {
+      item.starttime = this.updateDateStringToToday(item.starttime);
+      item.endtime = this.updateDateStringToToday(item.endtime);
+    })
     this.filterList = this.pendingList;
   }
+
+  updateDateStringToToday(inputDateString: string) {
+    // Get today's date
+    const today = new Date();
+
+    // Extract time from the input date string
+    const inputDate = new Date(inputDateString);
+    const hours = inputDate.getHours();
+    const minutes = inputDate.getMinutes();
+    const seconds = inputDate.getSeconds();
+
+    // Set the time to the extracted time, and date to today's date
+    today.setHours(hours, minutes, seconds);
+
+    // Format the updated date to the desired format 'YYYY-MM-DD HH:mm:ss'
+    const year = today.getFullYear();
+    const month = String(today.getMonth() + 1).padStart(2, '0');
+    const day = String(today.getDate()).padStart(2, '0');
+    const hoursStr = String(today.getHours()).padStart(2, '0');
+    const minutesStr = String(today.getMinutes()).padStart(2, '0');
+    const secondsStr = String(today.getSeconds()).padStart(2, '0');
+
+    const updatedDateString = `${year}-${month}-${day} ${hoursStr}:${minutesStr}:${secondsStr}`;
+    return updatedDateString;
+}
 
   public convertDate(date: string): string {
     const inputDate = new Date(date); // Convert input string to Date object

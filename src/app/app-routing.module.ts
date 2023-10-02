@@ -9,6 +9,7 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'map', component: MapComponent },
   { path: '', component: GanttComponent },
+  { path: 'gantt', component: GanttComponent },
   { path: 'overview', component: LoginComponent },
   { path: 'register', component: RegistrationComponent }
 ];
